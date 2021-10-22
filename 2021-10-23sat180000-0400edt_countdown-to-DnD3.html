@@ -2,10 +2,34 @@
 <html>
   <head>
 	<meta charset="utf-8" />
-	<title> countdown to D&D </title>
+	<meta name="description" content="timezone independent countdown timer for meetings in discord">
+	<meta name="keywords" content="HTML, JavaScript">
+	<meta name="author" content="robotOverlord thanks www.sitepoint.com/build-javascript-clock-no-dependencies">
+	<meta name="viewport" content="width=200, initial-scale=1.0">
+	<meta http-equiv="refresh" content="300">
+
+	<title> countdown to DnD3.5ed </title>
+
+	<meta property="og:title" content="countdown to DnD3.5ed" />
+	<meta property="og:type" content="image" />
+	<meta property="og:url" content="https://oilcitymoviestop.github.io/2021-10-23sat180000-0400edt_countdown-to-DnD3.html" />
+	<meta property="og:image" content="http://irontavern.com/wp-content/uploads/2012/08/dnd-logo.jpeg" />
+	<meta property="og:image:secure_url" content="https://irontavern.com/wp-content/uploads/2012/08/dnd-logo.jpeg" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="200" />
+	<meta property="og:image:height" content="100" />
+	<meta property="og:image:alt" content="DnD logo" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@r0b0t0verl0rd" />
+	<meta name="twitter:title" content="countdown to DnD3.5ed" />
+	<meta name="twitter:description" content="timezone independent countdown timer for meetings in discord" />
+	<meta name="twitter:image" content="https://irontavern.com/wp-content/uploads/2012/08/dnd-logo.jpeg" />
   </head>
   <body>
-	next D&D session in:
+  	<b>
+	<div>DnD3.5ed@Hueland</div>
+	<div>next Sat. session in:</div>
 	<div id="clockdiv">
 	    <span class="days"></span>
 	    d
@@ -16,7 +40,14 @@
 	    <span class="seconds"></span>
 	    s
 	</div>
-    <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=OilCityMovieStop.GitHub.io_countdown" alt="hits">
+	</b>
+	<div>
+	    <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=OilCityMovieStop.GitHub.io_countdown" alt="hits" width="200" height="50">
+	</div>
+	<div>
+	    <img src="https://irontavern.com/wp-content/uploads/2012/08/dnd-logo.jpeg" alt="DnD-logo" width="200" height="100">
+	</div>
+
     <script type = "text/javascript">
 	function getTimeRemaining(endtime) {
 	  const total = Date.parse(endtime) - Date.parse(new Date());
