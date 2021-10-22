@@ -158,13 +158,13 @@
 	  updateClock();
 	  const timeinterval = setInterval(updateClock, 1000);
 	}
-	const saturday = 6
-	const deadline = new Date.UTC();
-	deadline.setHours(23); 			// }
-	deadline.setMinutes(0); 		// } = 11pm UTC today
-	deadline.setSeconds(0); 		// }
-	deadline.setDate(deadline.getDate() + (saturday+(7-deadline.getDay() ))%7 );
-	deadline = (Date.parse("2021-10-23T23:00:00-00:00")); 	// hardcoded for now
+//	const saturday = 6
+//	const deadline = new Date.UTC();
+//	deadline.setHours(23); 			// }
+//	deadline.setMinutes(0); 		// } = 11pm UTC today
+//	deadline.setSeconds(0); 		// }
+//	deadline.setDate(deadline.getDate() + (saturday+(7-deadline.getDay() ))%7 );
+	const deadline = new Date.UTC(Date.parse("2021-10-23T23:00:00-00:00")); 	// hardcoded for now?
 	initializeClock('clockdiv', deadline);
     </script>
   </body>
