@@ -159,12 +159,12 @@
 	  const timeinterval = setInterval(updateClock, 1000);
 	}
 	const saturday = 6
-	const deadline = new Date();
-	deadline.setHours(19); 			// }
-	deadline.setMinutes(0); 		// } = 7pm today
+	const deadline = new Date.UTC();
+	deadline.setHours(23); 			// }
+	deadline.setMinutes(0); 		// } = 11pm UTC today
 	deadline.setSeconds(0); 		// }
 	deadline.setDate(deadline.getDate() + (saturday+(7-deadline.getDay() ))%7 );
-	// deadline = (Date.parse("2021-10-23T19:00:00-04:00")); 	// hardcoded at first
+	// deadline = (Date.parse("2021-10-23T23:00:00-00:00")); 	// hardcoded at first
 	initializeClock('clockdiv', deadline);
     </script>
   </body>
