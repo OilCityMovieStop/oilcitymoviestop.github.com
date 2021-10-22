@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" xmlns:og="http://opengraphprotocol.org/schema/">
+  <head>
+	<meta charset="utf-8">
+	<meta name="robots"		content="noindex,nofollow">
+	<meta name="robots" 		content="max-image-preview:large">
+<!--	<meta name="viewport" 		content="width=device-width, initial-scale=1.0" /> 	-->
+	<meta name="viewport" 		content="width=200, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="refresh" 	content="300" />
+
+	<meta name="language" 		content="english" />
+	<meta name="distribution" 	content="global" />
+	<meta name="description" 	content="timezone independent countdown timer for meetings in discord&#x27;s voice chat" />
+	<meta name="keywords" 		content="HTML, JavaScript, timer, counter" />
+	<meta name="author" 		content="robotOverlord thanks www.sitepoint.com/build-javascript-clock-no-dependencies" />
+	<meta name="revised" 		content="robotOverlord, 2021-10-22" />
+
+	<title> countdown to DnD3.5ed </title>
+
+	<meta property="og:title" 		content="DCMI Metadata Terms" />
+	<meta property="og:type" 		content="website" />
+	<meta property="og:url" 		content="https://ogp.me/" />
+	<meta property="og:image" 		content="https://ogp.me/logo.png" />
+	<meta property="og:image:type" 		content="image/png" />
+	<meta property="og:image:width" 	content="300" />
+	<meta property="og:image:height" 	content="300" />
+	<meta property="og:image:alt" 		content="The Open Graph logo" />
+	<meta property="og:description" 	content="This document is ...og property desc" />
+
+	<meta property="og:type" 		content="website/html" />
+	<link rel="canonical" 			href="https://oilcitymoviestop.github.io/countdown-to-DnD3.html#canonical" />
+	<meta property="og:url" 		content="https://oilcitymoviestop.github.io/countdown-to-DnD3.html" />
+	<meta property="og:title" 		content="countdown to DnD3.5ed og property title" />
+	<meta property="og:description" 	content="timezone independent countdown timer for meetings in discord&#x27;s voice chat"/>
+	<meta property="og:type" 		content="text" />
+	<meta property="og:type" 		content="image" />
+	<meta property="og:image" 		content="http://oilcitymoviestop.github.io/countdown-to-DnD3.html#og-prop-image" />
+	<meta property="og:image:secure_url" 	content="https://oilcitymoviestop.github.io/countdown-to-DnD3.html#og-prop-image-secure" />
+	<meta property="og:image:type" 		content="image/jpeg" />
+	<meta property="og:image:width" 	content="200" />
+	<meta property="og:image:height" 	content="100" />
+	<meta property="og:image:alt" 		content="DnD-logo" />
+
+<!--	<meta name="twitter:card" 		content="summary" /> 				-->
+	<meta name="twitter:card" 		content="summary_large_image"/>
+	<meta name="twitter:site" 		content="@r0b0t0verl0rd twitter name site" />
+	<meta name="twitter:title" 		content="countdown to DnD3.5ed twitter name title" />
+	<meta name="twitter:description" 	content="timezone independent countdown timer for meetings in discord&#x27;s voice chat twitnamedesc" />
+	<meta name="twitter:image" 		content="https://oilcitymoviestop.github.io/countdown-to-DnD3.html" />
+
+	<meta property="twitter:site" 		content="@twitter property site"/>
+	<meta property="twitter:title" 		content="twitter property title"/>
+	<meta property="twitter:card" 		content="summary_large_image"/>
+	<meta property="twitter:description" 	content="twitter property&#x27;s desc"/>
+	<meta property="twitter:image" 		content="DnD-logo.jpg"/>
+	<meta property="twitter:image:alt" 	content="twitter property image alt"/>
+
+  </head>
+  <body style="color:#FFFFFF;background-color:#FF0000;">
+	<div>DnD3.5ed@Hueland</div>
+  	<b>
+	<div>next Sat. session in:</div>
+	<div id="clockdiv">
+	    <span class="days"></span>
+	    d
+	    <span class="hours"></span>
+	    h
+	    <span class="minutes"></span>
+	    m
+	    <span class="seconds"></span>
+	    s
+	</div>
+	</b>
+	<div>
+	    <img src="DnD-logo.jpg" alt="DnD-logo" width="200" height="100">
+	</div>
+	<div>
+	    <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=OilCityMovieStop.GitHub.io_countdown" alt="hits" width="200" height="50">
+	</div>
+
+    <script type = "text/javascript">
+	function getTimeRemaining(endtime) {
+	  const total = Date.parse(endtime) - Date.parse(new Date());
+	  const seconds = Math.floor((total / 1000) % 60);
+	  const minutes = Math.floor((total / 1000 / 60) % 60);
+	  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+	  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+	  
+	  return {
+	    total,
+	    days,
+	    hours,
+	    minutes,
+	    seconds
+	  };
+	}
+	
+	function initializeClock(id, endtime) {
+	  const clock = document.getElementById(id);
+	  const daysSpan = clock.querySelector('.days');
+	  const hoursSpan = clock.querySelector('.hours');
+	  const minutesSpan = clock.querySelector('.minutes');
+	  const secondsSpan = clock.querySelector('.seconds');
+	
+	  function updateClock() {
+	    const t = getTimeRemaining(endtime);
+	
+	    daysSpan.innerHTML = ('0' + t.days).slice(-2);
+	    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+	    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+	    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+	
+	    if (t.total <= 0) {
+	      clearInterval(timeinterval);
+	    }
+	  }
+	
+	  updateClock();
+	  const timeinterval = setInterval(updateClock, 1000);
+	}
+	const saturday = 6
+	const deadline = new Date();
+	deadline.setHours(19);        // }
+	deadline.setMinutes(0);       // }=7pm today
+	deadline.setSeconds(0);       // }
+	deadline.setDate(deadline.getDate() 
+      + (saturday+(7-deadline.getDay() ))%7 );
+//deadline = (Date.parse("2021-10-23T19:00:00-04:00"));
+	initializeClock('clockdiv', deadline);
+    </script>
+  </body>
+</html>
