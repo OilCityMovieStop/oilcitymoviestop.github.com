@@ -11,19 +11,19 @@
 
 	<meta name="language" 			content="english" />
 	<meta name="distribution" 		content="global" />
-	<meta name="description" 		content="new countdown timer until next D&#x26;D3.5ed session on Saturday 11PM UTC" />
+	<meta name="description" 		content="new countdown timer until next D&#x26;D3.5ed session on Saturday 1159PM UTC" />
 	<meta name="keywords" 			content="HTML, JavaScript, timer, counter" />
 	<meta name="author" 			content="robotOverlord thanks www.sitepoint.com/build-javascript-clock-no-dependencies" />
-	<meta name="revised" 			content="robotOverlord, 2021-10-22" />
+	<meta name="revised" 			content="robotOverlord, 2021-11-06" />
 
-	<title>new countdown timer until next D&#x26;D3.5ed session on Saturday 11PM UTC</title>
+	<title>new countdown timer until next D&#x26;D3.5ed session on Saturday 1159PM UTC</title>
 	<link rel="canonical" 			href="https://oilcitymoviestop.github.io/countdown-to-DnD3.html#canonical" />
 
 	<meta property="og:type" 		content="website" />
 	<meta property="og:url" 		content="http://oilcitymoviestop.github.io/countdown-to-DnD3.html#url" />
-	<meta property="og:title" 		content="new countdown timer until next D&#x26;D3.5ed session on Saturday 11PM UTC" />
+	<meta property="og:title" 		content="new countdown timer until next D&#x26;D3.5ed session on Saturday 1159PM UTC" />
 	<meta property="og:site_name" 		content="Hueland@Discord" />
-	<meta property="og:description" 	content="new countdown timer until next D&#x26;D3.5ed session on Saturday 11PM UTC" />
+	<meta property="og:description" 	content="new countdown timer until next D&#x26;D3.5ed session on Saturday 1159PM UTC" />
 	<meta property="og:type" 		content="text" />
 	<meta property="og:url" 		content="http://oilcitymoviestop.github.io/countdown-to-DnD3.html#text" />
 	<meta name="twitter:card" 		content="summary_large_image" />
@@ -147,13 +147,17 @@
 	  const secondsSpan = clock.querySelector('.seconds');
 	  function updateClock() {
 	    const t = getTimeRemaining(endtime);
-	    daysSpan.innerHTML = ('0' + t.days).slice(-2);
-	    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-	    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-	    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-	    if (t.total <= 0) {
-	      clearInterval(timeinterval);
-	    }
+	    daysSpan.innerHTML = t.days;
+	    hoursSpan.innerHTML = t.hours;
+	    minutesSpan.innerHTML = t.minutes;
+	    secondsSpan.innerHTML = t.seconds;
+//	    daysSpan.innerHTML = ('0' + t.days).slice(-2);
+//	    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+//	    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+//	    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+//	    if (t.total <= 0) {
+//	      clearInterval(timeinterval);
+//	    }
 	  }
 	  updateClock();
 	  const timeinterval = setInterval(updateClock, 1000);
@@ -164,7 +168,7 @@
 //	deadline.setMinutes(0); 		// } = 11pm UTC today
 //	deadline.setSeconds(0); 		// }
 //	deadline.setDate(deadline.getDate() + (saturday+(7-deadline.getDay() ))%7 );
-	const deadline = new Date(Date.parse("2021-10-23T23:00:00-00:00")); 	// hardcoded UTC for now?
+	const deadline = new Date(Date.parse("2021-11-06T23:59:59-00:00")); 	// hardcoded UTC for now?
 	initializeClock('clockdiv', deadline);
     </script>
   </body>
