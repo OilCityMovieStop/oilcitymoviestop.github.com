@@ -156,10 +156,10 @@
 	    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
 	    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 	    if (t.total <= 0) {
-//		clearInterval(timeinterval);?
-// //		tick = 0;				// set update tick to zero ms instead of 1000ms?  does not work at all.
+//		clearInterval(timeinterval);		// ???
+		tick = 0;				// set update tick to zero ms instead of 1000ms?  does not work at all.
 // //		deadline = new Date(); 			// or set deadline to now? stops refreshing but still negative.
-		deadline = (deadline+(7*24*60*60)); 	// or add another week to deadline? no effect noticed?
+// //		deadline = (deadline+(7*24*60*60)); 	// or add another week to deadline? no effect noticed.
 		initializeClock('clockdiv', deadline);
 	    }
 	  }
