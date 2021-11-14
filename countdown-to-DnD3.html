@@ -158,9 +158,9 @@
 	    if (t.total <= 0) {
 //		clearInterval(timeinterval);?
 // //		tick = 0;				// set update tick to zero ms instead of 1000ms?  does not work at all.
-// //		deadline = new Date(); 			// or set deadline to now? stops refreshing but still negative.
-		deadline = (deadline+(7*24*60*60)); 	// or add another week to deadline?
-//		initializeClock('clockdiv', deadline);
+		deadline = new Date(); 			// or set deadline to now? stops refreshing but still negative?
+// //		deadline = (deadline+(7*24*60*60)); 	// or add another week to deadline? no effect noticed?
+		initializeClock('clockdiv', deadline);
 	    }
 	  }
 	  updateClock();
@@ -173,7 +173,7 @@
 //	deadline.setSeconds(0); 		// }
 //	deadline.setDate(deadline.getDate() + (saturday+(7-deadline.getDay() ))%7 );
 	const tick = 1000;
-	const deadline = new Date(Date.parse("2021-11-13T23:59:59-00:00")); 	// hardcoded UTC for now?
+	const deadline = new Date(Date.parse("2021-11-20T23:59:59-00:00")); 	// hardcoded UTC for now?
 	initializeClock('clockdiv', deadline);
     </script>
   </body>
