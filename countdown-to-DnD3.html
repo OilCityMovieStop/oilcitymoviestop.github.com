@@ -128,7 +128,7 @@
 	function getTimeRemaining(endtime) {
 	  const total = 0
 //	  const total = Date.parse(endtime) - Date.parse(new Date());
-	  if (Date.parse(endtime) <= Date.parse(new Date())) {
+	  if (Date.parse(endtime) > Date.parse(new Date())) {
 		total = Date.parse(endtime) - Date.parse(new Date());
 	  }
 	  const seconds = Math.floor((total / 1000) % 60);
