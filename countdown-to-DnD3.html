@@ -84,6 +84,7 @@
 -->
   </head>
   <body style="color:#FFFFFF;background-color:#FF0000;">
+	<div><marquee direction="right" behavior="alternate" loop="-1" scrollamount="4" width="20%">((WORK IN PROGRESS))</marquee></div>
 	<div>DnD3.5ed@Hueland</div>
   	<b>
 	<div>next Sat. session in:</div>
@@ -96,7 +97,12 @@
 	    m
 	    <span class="seconds"></span>
 	    s
+	    <span class="testend"></span>
+	    testend
+	    <span class="testnow"></span>
+	    testnow
 	</div>
+
 	</b>
 <!--
 	<iframe src="url of required page">
@@ -126,9 +132,9 @@
 -->
     <script type = "text/javascript">
 	function getTimeRemaining(endtime) {
-	  const total = 0
+//	  const total = 0
 //	  const total = Date.parse(endtime) - Date.parse(new Date());
-	  if (Date.parse(endtime) > Date.parse(new Date())) {
+	  if (Date.parse(new Date()) < Date.parse(endtime)) {
 		const total = Date.parse(endtime) - Date.parse(new Date());
 	  }
 	  const days = Math.floor(total / (1000 * 60 * 60 * 24));
@@ -140,7 +146,9 @@
 	    days,
 	    hours,
 	    minutes,
-	    seconds
+	    seconds,
+	    Date.parse(endtime),
+	    Date.parse(new Date())
 	  };
 	}
 	function initializeClock(id, endtime) {
@@ -159,6 +167,8 @@
 	    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
 	    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
 	    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+	    testendSpan.innerHTML = t.testend;
+	    testnowSpan.innerHTML = t.testnow;
 	    if (t.total <= 0) {
 //		clearInterval(timeinterval);		// ???
 		tick = 0;				// set update tick to zero ms instead of 1000ms?  does not work at all.
@@ -177,8 +187,9 @@
 //	deadline.setSeconds(0); 		// }
 //	deadline.setDate(deadline.getDate() + (saturday+(7-deadline.getDay() ))%7 );
 	const tick = 1000;
-	const deadline = new Date(Date.parse("2021-11-20T23:59:59-00:00")); 	// hardcoded UTC for now?
+	const deadline = new Date(Date.parse("2021-11-27T23:59:59-00:00")); 	// hardcoded UTC for now?
 	initializeClock('clockdiv', deadline);
     </script>
   </body>
 </html>
+
